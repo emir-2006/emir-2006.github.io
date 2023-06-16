@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <p align="center" id="clock"></p>
+       <script>
+            function show() {
+                var Digital = new Date()
+                var hours = Digital.getHours()
+                var minutes = Digital.getMinutes()
+                var seconds = Digital.getSeconds()
+                var dn = "AM"
+                if (hours > 12) {
+                        dn = "PM"
+                        hours = hours - 12
+                    }
+                if (hours == 0)
+                        hours = 12
+                if (minutes <= 9)
+                        minutes = "0" + minutes
+                if (seconds <= 9)
+                        seconds = "0" + seconds
+                    document.getElementById('clock').innerText = hours + ":" + minutes + ":" +
+                        seconds + " " + dn
+                    setTimeout("show()", 1000)
+                }
+                show();
+        </script>
+    <meta charset="UTF-8">
+    <title>CARRITO DE COMPRAS</title>
+
+
+
+
+    <center><h1>BIENVENIDO PAPELERIA JEAR</h1></center>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <br>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          // Variables
+          const baseDeDatos = [
+              {
+                  id: 1,
+                  nombre: 'Cuaderno Profesional 200 hojas',
+                  precio: 95,
+                  imagen: "libreta.png"
+              },
+              {
+                  id: 2,
+                  nombre: 'Marcatextos Accent Sharpie T4 Colores Surtido',
+                  precio: 61,
+                  imagen: 'plumon.png'
+              },
+              {
+                  id: 3,
+                  nombre: 'Sacapuntas 2 en 1',
+                  precio: 13,
+                  imagen: 'sacapuntas.png'
+              },
+              {
+                  id: 4,
+                  nombre: 'Lápiz Paper Mate 4 pzas +1',
+                  precio: 27,
+                  imagen: 'lapiz.png'
+              },
+              {
+                  id: 5,
+                  nombre: 'Regla Aluminio 30cm',
+                  precio: 21,
+                  imagen: 'regla.png'
+              },
+              {
+                  id: 6,
+                  nombre: 'Pritt Lapiz Adhesivo 2 piezas',
+                  precio: 50,
+                  imagen: 'resistol.png'
+              },
+              {
+                  id: 7,
+                  nombre: 'Lápices de Colores Dúo Prismacolor Junior Redondo 24 pzas',
+                  precio: 249,
+                  imagen: 'colores.png'
+              },
+              {
+                  id: 8,
+                  nombre: 'Cinta Correctora Bic ',
+                  precio: 22,
+                  imagen: 'corrector.png'
+              },
+              {
+                  id: 9,
+                  nombre: 'Bolígrafo Paper Mate Punto Fino Azul 12 pzas',
+                  precio: 52,
+                  imagen: 'plumas.png'
+              },
+              {
+                  id: 10,
+                  nombre: 'Cuaderno profesional 100 hojas',
+                  precio: 75,
+                  imagen: 'libreta100.png'
+              },
+              {
+                  id: 11,
+                  nombre: 'Marcador Sharpie 2 Piezas',
+                  precio: 39,
+                  imagen: 'plumones.jpg'
+              },
+              {
+                  id: 12,
+                  nombre: 'Corrector Pluma, 2 piezas',
+                  precio: 34,
+                  imagen: 'correctorlapiz.png'
+              },
+              {
+                  id: 13,
+                  nombre: 'Sacapuntas Maped Colores 2 pieza',
+                  precio: 25,
+                  imagen: 'sacapuntas2.png'
+              },
+              {
+                  id: 14,
+                  nombre: 'Lápices de Colores Stuk 24 pzas',
+                  precio: 90,
+                  imagen: 'coloresstuk.png'
+              },
+              {
+                  id: 15,
+                  nombre: 'Bolígrafos Paper Mate Kilométrico Candy Pop Multicolor 8 pzas',
+                  precio: 75,
+                  imagen: 'plumascolores.png'
+              },
+              {
+                  id: 16,
+                  nombre: 'Marcador Sharpie Fino Doble Punta 3 piezas negro, azul y rojo',
+                  precio: 38,
+                  imagen: 'plumones3.png'
+              },
+              {
+                  id: 17,
+                  nombre: 'Goma Factis Softer S-20 3 piezas',
+                  precio: 25,
+                  imagen: 'gomas.png'
+              },
+              {
+                  id: 18,
+                  nombre: 'Stickers Love 59 piezas',
+                  precio: 56,
+                  imagen: 'stickers.png'
+              },
+              {
+                  id: 19,
+                  nombre: 'Goma para Borrar Arcoíris Varios Colores 1 pza',
+                  precio: 20,
+                  imagen: 'goma.png'
+              },
+              {
+                  id: 20,
+                  nombre: 'Lápices de Colores Maped Color Peps Hexagonal 72 pzas',
+                  precio: 75,
+                  imagen: 'coloresmapped.png'
+              },
+              {
+                  id: 21,
+                  nombre: 'Juego de Geometría Maped Original Multicolor 5 pzas',
+                  precio: 75,
+                  imagen: 'reglas.png'
+              },
+              {
+                  id: 22,
+                  nombre: 'Cuaderno Profesional Rayado Fancy 80 hojas',
+                  precio: 65,
+                  imagen: 'libreta80.png'
+              },
+              {
+                  id: 23,
+                  nombre: 'Acuarelas en Pastilla Roel 12 Colores Aperlados',
+                  precio: 50,
+                  imagen: 'pinturas.png'
+              },
+              {
+                  id: 24,
+                  nombre: 'Diamantina con Pegamento Pelikan Cobre 60 ml',
+                  precio: 25,
+                  imagen: 'diamantina1.png'
+              },
+              {
+                  id: 26,
+                  nombre: 'Diamantina con Pegamento Pelikan Negra 60 ml',
+                  precio: 25,
+                  imagen: 'diamantina2.png'
+              },
+              {
+                  id: 27,
+                  nombre: 'Pegamento Liquido 120ml y 2 Lapices Adhesivos',
+                  precio: 55,
+                  imagen: 'pegamento.png'
+              },
+              {
+                  id: 28,
+                  nombre: 'Memo Book Plastificado Con 8 Piezas Color Neon',
+                  precio: 69,
+                  imagen: 'libretita.png'
+              },
+              {
+                  id: 29,
+                  nombre: 'Compás Precisión Academic 360 Maped',
+                  precio: 36,
+                  imagen: 'compas.png'
+              },
+              {
+                  id: 30,
+                  nombre: 'Compás Maped Precision System',
+                  precio: 145,
+                  imagen: 'compas2.png'
+              },
+              {
+                  id: 31,
+                  nombre: 'Juego Geo 4P+Compas Technicolor Blist',
+                  precio: 65,
+                  imagen: 'kitregla.png'
+              },
+              {
+                  id: 32,
+                  nombre: 'Hojas de Papel Tamaño Carta Officemax Colores Neon 200 hojas',
+                  precio: 120,
+                  imagen: 'hojas200.png'
+              },
+              {
+                  id: 33,
+                  nombre: 'Hojas para Carpeta Tamaño Carta Cuadro Grande Scribe 100 hojas',
+                  precio: 75,
+                  imagen: 'hojas100.png'
+              },
+              {
+                  id: 34,
+                  nombre: 'Hojas de Papel Tamaño Carta Pochteca Colores Surtidos 100 hojas',
+                  precio: 80,
+                  imagen: 'hojascolores.png'
+              },
+              {
+                  id: 35,
+                  nombre: 'PERFORADORA 3 ORIFICIOS',
+                  precio: 200,
+                  imagen: 'perforadora.png'
+              },
+              {
+                  id: 36,
+                  nombre: 'SUJETADOCUMENTOS 32MM, 80 HOJAS, CAJA con 12 COLOR PLATA',
+                  precio: 40,
+                  imagen: 'sujetador.png'
+              }
+          ];
+
+          let carrito = [];
+          const divisa = '$ ';
+          const DOMitems = document.querySelector('#items');
+          const DOMcarrito = document.querySelector('#carrito');
+          const DOMtotal = document.querySelector('#total');
+          const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+
+          // Funciones
+
+          /**
+          * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
+          */
+          function renderizarProductos() {
+              baseDeDatos.forEach((info) => {
+                  // Estructura
+                  const miNodo = document.createElement('div');
+                  miNodo.classList.add('card', 'col-sm-4');
+                  // Body
+                  const miNodoCardBody = document.createElement('div');
+                  miNodoCardBody.classList.add('card-body');
+                  // Titulo
+                  const miNodoTitle = document.createElement('h5');
+                  miNodoTitle.classList.add('card-title');
+                  miNodoTitle.textContent = info.nombre;
+                  // Imagen
+                  const miNodoImagen = document.createElement('img');
+                  miNodoImagen.classList.add('img-fluid');
+                  miNodoImagen.setAttribute('src', info.imagen);
+                  // Precio
+                  const miNodoPrecio = document.createElement('p');
+                  miNodoPrecio.classList.add('card-text');
+                  miNodoPrecio.textContent = `${info.precio}${divisa}`;
+                  // Boton 
+                  const miNodoBoton = document.createElement('button');
+                  miNodoBoton.classList.add('btn', 'btn-primary');
+                  miNodoBoton.textContent = '+';
+                  miNodoBoton.setAttribute('marcador', info.id);
+                  miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+                  // Insertamos
+                  miNodoCardBody.appendChild(miNodoImagen);
+                  miNodoCardBody.appendChild(miNodoTitle);
+                  miNodoCardBody.appendChild(miNodoPrecio);
+                  miNodoCardBody.appendChild(miNodoBoton);
+                  miNodo.appendChild(miNodoCardBody);
+                  DOMitems.appendChild(miNodo);
+              });
+          }
+
+          /**
+          * Evento para añadir un producto al carrito de la compra
+          */
+          function anyadirProductoAlCarrito(evento) {
+              // Anyadimos el Nodo a nuestro carrito
+              carrito.push(evento.target.getAttribute('marcador'))
+              // Actualizamos el carrito 
+              renderizarCarrito();
+
+          }
+
+          /**
+          * Dibuja todos los productos guardados en el carrito
+          */
+          function renderizarCarrito() {
+              // Vaciamos todo el html
+              DOMcarrito.textContent = '';
+              // Quitamos los duplicados
+              const carritoSinDuplicados = [...new Set(carrito)];
+              // Generamos los Nodos a partir de carrito
+              carritoSinDuplicados.forEach((item) => {
+                  // Obtenemos el item que necesitamos de la variable base de datos
+                  const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                      // ¿Coincide las id? Solo puede existir un caso
+                      return itemBaseDatos.id === parseInt(item);
+                  });
+                  // Cuenta el número de veces que se repite el producto
+                  const numeroUnidadesItem = carrito.reduce((total, itemId) => {
+                      // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
+                      return itemId === item ? total += 1 : total;
+                  }, 0);
+                  // Creamos el nodo del item del carrito
+                  const miNodo = document.createElement('li');
+                  miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+                  miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+                  // Boton de borrar
+                  const miBoton = document.createElement('button');
+                  miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+                  miBoton.textContent = 'X';
+                  miBoton.style.marginLeft = '1rem';
+                  miBoton.dataset.item = item;
+                  miBoton.addEventListener('click', borrarItemCarrito);
+                  // Mezclamos nodos
+                  miNodo.appendChild(miBoton);
+                  DOMcarrito.appendChild(miNodo);
+              });
+             // Renderizamos el precio total en el HTML
+             DOMtotal.textContent = calcularTotal();
+          }
+
+          /**
+          * Evento para borrar un elemento del carrito
+          */
+          function borrarItemCarrito(evento) {
+              // Obtenemos el producto ID que hay en el boton pulsado
+              const id = evento.target.dataset.item;
+              // Borramos todos los productos
+              carrito = carrito.filter((carritoId) => {
+                  return carritoId !== id;
+              });
+              // volvemos a renderizar
+              renderizarCarrito();
+          }
+
+          /**
+           * Calcula el precio total teniendo en cuenta los productos repetidos
+           */
+          function calcularTotal() {
+              // Recorremos el array del carrito 
+              return carrito.reduce((total, item) => {
+                  // De cada elemento obtenemos su precio
+                  const miItem = baseDeDatos.filter((itemBaseDatos) => {
+                      return itemBaseDatos.id === parseInt(item);
+                  });
+                  // Los sumamos al total
+                  return total + miItem[0].precio;
+              }, 0).toFixed(2);
+          }
+
+          /**
+          * Varia el carrito y vuelve a dibujarlo
+          */
+          function vaciarCarrito() {
+              // Limpiamos los productos guardados
+              carrito = [];
+              // Renderizamos los cambios
+              renderizarCarrito();
+          }
+
+          // Eventos
+          DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+
+          // Inicio
+          renderizarProductos();
+          renderizarCarrito();
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Elementos generados a partir del JSON -->
+            <main id="items" class="col-sm-8 row"></main>
+            <!-- Carrito -->
+            <aside class="col-sm-4">
+                <h2>Carrito</h2>
+                <!-- Elementos del carrito -->
+                <ul id="carrito" class="list-group"></ul>
+                <hr>
+                <!-- Precio total -->
+                <p class="text-right">Total: <span id="total"></span>&#36;</p>
+                <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                <button id="boton-vaciar" class="btn btn-danger">Comprar</button><br><br>
+                <input class="controls" type="text" required name="idusuario" id="idusuario" placeholder="Ingrese ID de Usuario"><br><br>
+                <input class="controls" type="text"   name="nombre" id="nombre" placeholder="Ingrese su Nombre"><br><br>
+
+                <form action="carrito2.php" method="POST">
+                  <input type="button" name="btn_comprar" value="enviar">
+                </form>
+               
+               
+
+<input type="date" id="start" name="trip-start"
+       value="2023-07-22"
+       min="2023-01-01" max="2023-12-31">
+            </aside>
+        </div>
+    </div>
+</body>
+</html>

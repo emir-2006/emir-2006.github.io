@@ -1,0 +1,80 @@
+  .* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('LOGO.png');
+}
+/*diseño responsive*/
+/* Estilos para dispositivos móviles */
+        @media screen and (max-width: 480px) {
+            /* Estilos específicos para dispositivos móviles */
+        }
+        
+        /* Estilos para tablets */
+        @media screen and (min-width: 481px) and (max-width: 1024px) {
+            /* Estilos específicos para tablets */
+        }
+        
+        /* Estilos para TVs */
+        @media screen and (min-width: 1025px) {
+            /* Estilos específicos para TVs */
+        }
+
+.form-register {
+  width: 700px;
+  background: #24303c;
+  padding: 30px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-family: 'calibri';
+  color: white;
+  box-shadow: 30px 13px 37px #000;
+}
+
+.form-register h4 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.controls {
+  width: 100%;
+  background: #24303c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 2px solid #1f53c5;
+  font-family: 'arial';
+  font-size: 18px;
+  color: #FFC886;
+}
+
+.form-register p {
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.form-register a {
+  color: white;
+  text-decoration: none;
+}
+
+.form-register a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.form-register .botons {
+  width: 100%;
+  background: #1f53c5;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+}
